@@ -1,19 +1,17 @@
-syntax enable           " enable syntax processing
-if has('termguicolors')
-  set termguicolors     " use guifg/guibg instead of ctermfg/ctermbg in terminal
-endif
+"syntax enable           " enable syntax processing
+"if has('termguicolors')
+"  set termguicolors     " use guifg/guibg instead of ctermfg/ctermbg in terminal
+"endif
 
-if (&term =~ '^xterm' && &t_Co == 256)     " https://github.com/microsoft/terminal/issues/832
-  set t_ut= | set ttyscroll=1
-endif
+"if (&term =~ '^xterm' && &t_Co == 256)     " https://github.com/microsoft/terminal/issues/832
+"  set t_ut= | set ttyscroll=1
+"endif
 
 set nocompatible
-colorscheme elflord
-set background=dark
 
 scriptencoding utf-8
 set encoding=utf-8
-set backspace=indent,eol,start
+set backspace=indent,eol,start    " Fix backspace key
 
 set tabstop=2           " 2 space tab
 set expandtab           " use spaces for tabs
@@ -44,3 +42,18 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-o> <C-w>o
 
 autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn
+
+" ============================ theme and status line ============================
+
+" theme
+colorscheme elflord
+set background=dark
+
+" set mark column color
+" hi! link SignColumn   LineNr
+" hi! link ShowMarksHLl DiffAdd
+" hi! link ShowMarksHLu DiffChange
+
+" status line
+" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+" set laststatus=2   " Always show the status line - use 2 lines for the status bar
