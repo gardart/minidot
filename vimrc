@@ -46,32 +46,12 @@ colorscheme elflord
 set background=dark
 
 " status line
-" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 set laststatus=2   " Always show the status line - use 2 lines for the status bar
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-function! NearestMethodOrFunction() abort
-  " return get(b:, 'vista_nearest_method_or_function', '')
-  return get(b:, 'TagbarShowTag')
-endfunction
-
 set statusline=
 set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-" set statusline+=%#LineNr# " <<<<<<======
 set statusline+=\ %f
 set statusline+=%m
 set statusline+=%=
-" set statusline+=%#CursorColumn#
-" set statusline+=%{NearestMethodOrFunction()}
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
