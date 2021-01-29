@@ -1,13 +1,9 @@
-"syntax enable           " enable syntax processing
-"if has('termguicolors')
-"  set termguicolors     " use guifg/guibg instead of ctermfg/ctermbg in terminal
-"endif
+" leader
+let mapleader = ','
+let g:mapleader = ','
 
-"if (&term =~ '^xterm' && &t_Co == 256)     " https://github.com/microsoft/terminal/issues/832
-"  set t_ut= | set ttyscroll=1
-"endif
-
-set nocompatible
+syntax enable           " enable syntax processing
+set nocompatible        " Don't try to be vi compatible
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -49,11 +45,19 @@ autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn
 colorscheme elflord
 set background=dark
 
-" set mark column color
-" hi! link SignColumn   LineNr
-" hi! link ShowMarksHLl DiffAdd
-" hi! link ShowMarksHLu DiffChange
-
 " status line
 " set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-" set laststatus=2   " Always show the status line - use 2 lines for the status bar
+set laststatus=2   " Always show the status line - use 2 lines for the status bar
+set statusline=
+set statusline+=%{ChangeStatuslineColor()}               " Changing the statusline color
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
+set statusline+=%8*\ [%n]                                " buffernr
+"set statusline+=%8*\ %{GitInfo()}                        " Git Branch name
+set statusline+=%8*\ %<%F\ %{ReadOnly()}\ %m\ %w\        " File+path
+set statusline+=%#warningmsg#
+set statusline+=%*
+set statusline+=%9*\ %=                                  " Space
+set statusline+=%8*\ %y\                                 " FileType
+set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
+set statusline+=%8*\ %-3(%{FileSize()}%)                 " File size
+set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                 " Rownumber/total (%)
