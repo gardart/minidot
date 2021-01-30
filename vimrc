@@ -37,13 +37,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-o> <C-w>o
 
+" Filetype settings
 autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn
 
-" ============================ theme and status line ============================
-
-
-
-" status line
+" Status line
 set laststatus=2   " Always show the status line - use 2 lines for the status bar
 set statusline=
 set statusline+=%#PmenuSel#
@@ -56,7 +53,7 @@ set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 
-" theme
+" Themes
 " set t_Co=256
 colorscheme elflord
 set background=dark
