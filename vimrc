@@ -41,9 +41,7 @@ autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn
 
 " ============================ theme and status line ============================
 
-" theme
-colorscheme elflord
-set background=dark
+
 
 " status line
 set laststatus=2   " Always show the status line - use 2 lines for the status bar
@@ -57,3 +55,16 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+
+" theme
+" set t_Co=256
+colorscheme elflord
+set background=dark
+
+" manually install solarized theme
+" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim in ~/.vim/colors/
+" curl -fLo ~/.vim/colors/solarized.vim --create-dirs https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+silent! colorscheme solarized
+
