@@ -1,3 +1,34 @@
+# --------------#
+# tmux-sensible #
+# --------------#
+# https://github.com/tmux-plugins/tmux-sensible
+
+# address vim mode switching delay (http://superuser.com/a/252717/65504)
+set -s escape-time 0
+
+# increase scrollback buffer size
+set -g history-limit 50000
+
+# tmux messages are displayed for 4 seconds
+set -g display-time 4000
+
+# refresh 'status-left' and 'status-right' more often
+set -g status-interval 5
+
+# upgrade $TERM
+set -g default-terminal "screen-256color"
+
+# emacs key bindings in tmux command prompt (prefix + :) are better than
+# vi keys, even for vim users
+set -g status-keys emacs
+
+# focus events enabled for terminals that support them
+set -g focus-events on
+
+# super useful when using "grouped sessions" and multi-monitor setup
+setw -g aggressive-resize on
+
+
 # --------#
 # General #
 # --------#
@@ -5,17 +36,8 @@
 # Default shell
 set -g default-shell $SHELL
 
-# upgrade $TERM
-set -g default-terminal "screen-256color"
-
-# focus events enabled for terminals that support them
-set -g focus-events on
-
 # Mouse
 set -g mouse on
-
-# History
-set -g history-limit 102400
 
 # Set windows and page index to base 1
 set -g base-index 1
@@ -24,14 +46,11 @@ setw -g pane-base-index 1
 # Re-number windows when creating/closing new windows
 set -g renumber-windows on
 
-# Use emacs key bindings in status line
-set-option -g status-keys emacs
-
 # Use vim key bindings in copy mode
 setw -g mode-keys vi
 
 # Fix ESC delay in vim
-set -g escape-time 10
+# set -g escape-time 10
 
 # ------------#
 # Keybindings #
@@ -84,7 +103,7 @@ set-option -g status-left '#[bg=colour72] #[bg=colour237] #[bg=colour236] #[bg=c
 set-option -g status-left-length 16
 set-option -g status-bg colour237
 set-option -g status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] %a %R #[bg=colour236]#[fg=colour3] #[bg=colour237] #[bg=colour72] #[]'
-set-option -g status-interval 60
+#set-option -g status-interval 60
 
 set-option -g pane-active-border-style fg=colour246
 set-option -g pane-border-style fg=colour238
