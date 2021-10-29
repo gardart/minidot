@@ -5,6 +5,12 @@
 # Default shell
 set -g default-shell $SHELL
 
+# upgrade $TERM
+set -g default-terminal "screen-256color"
+
+# focus events enabled for terminals that support them
+set -g focus-events on
+
 # Mouse
 set -g mouse on
 
