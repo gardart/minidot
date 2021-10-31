@@ -1,9 +1,6 @@
 # minidot
 Minimal dotfiles for servers
 
-## Install Preqreq
-`dnf install -y git curl vim`
-
 ## Install dotfiles
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/gardart/minidot/main/bootstrap)"`
 
