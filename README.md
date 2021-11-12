@@ -36,13 +36,13 @@ Opna nýtt tmux session og gefa því ásamt glugganum nafn
 
 || Flýtivísun | Lýsing |
 | -------- | -------- | ----------- |
-| `Ctrl+b` | **`<Ctrl-hjkl>`** | Fara á milli gluggasvæða með hjkl án þess að þurfa að ýta á b líka, skilur einnig Vim splits |
-| `Ctrl+b` | **`Ctrl+b d | Aftengja tmux session |
-| `Ctrl+b` | **`Ctrl+b -`** | Skipta glugganum lárétt (einnig hægt með `"`) |
-| `Ctrl+b` | **`Ctrl+b ö`** | Skipta glugganum lóðrétt (einnig hægt með `%`) |
-| `Ctrl+b` | **`Ctrl+b c`** | Búa til nýjan tmux glugga og fara í sömu möppuna |
-| `Ctrl+b` | **`Ctrl+b b** | Breyta gluggasvæðinu í sjálfstæðann glugga |
-| `Ctrl+b` | **`Ctrl+b n/p`** | Skipta yfir á næsta eða fyrri glugga |
-| `Ctrl+b` | **`Ctrl+b ,`** | Endurskýra gluggann |
-| `Ctrl+b` | `↑ → ↓ ←`| Stækka/minnka glugga |
+| `Ctrl+b` | **`hjkl>`** | Fara á milli gluggasvæða með hjkl án þess að þurfa að ýta á b líka, skilur einnig Vim splits |
+| `Ctrl+b` | **`d`** | Aftengja tmux session |
+| `Ctrl+b` | **`-`** | Skipta glugganum lárétt (einnig hægt með `"`) |
+| `Ctrl+b` | **`ö`** | Skipta glugganum lóðrétt (einnig hægt með `%`) |
+| `Ctrl+b` | **`c`** | Búa til nýjan tmux glugga og fara í sömu möppuna |
+| `Ctrl+b` | **`b`** | Breyta gluggasvæðinu í sjálfstæðann glugga |
+| `Ctrl+b` | **`n/p`** | Skipta yfir á næsta eða fyrri glugga |
+| `Ctrl+b` | **`,`** | Endurskýra gluggann |
+| `Ctrl+b` | **`↑ → ↓ ←`** | Stækka/minnka glugga |
   
