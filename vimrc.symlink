@@ -23,6 +23,7 @@ nnoremap <leader>ez :vsp ~/.zshrc<CR>         " Edit zshrc
 nnoremap <leader>sv :source $MYVIMRC<CR>      " Source vimrc
 nnoremap <leader><space> :noh<CR>             " Turn off highlighting until the next search
 nnoremap <leader>l :call ToggleNumber()<CR>   " Toggle line number
+nnoremap <leader>1 :set number!<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>        " Open/Close Nerdtree file manager
 " surround word
 nnoremap <leader>" ciw"<C-r>""<esc>
