@@ -32,7 +32,7 @@ dotfiles fyrir Linux þjóna
 https://tmuxcheatsheet.com
 
 Opna nýtt tmux session og gefa því ásamt glugganum nafn
-`tmux new -s mysession -n mywindow`
+```tmux new -s mysession -n mywindow```
 
 || Flýtivísun | Lýsing |
 | -------- | -------- | ----------- |
