@@ -124,3 +124,12 @@ let g:solarized_termtrans=1
 " silent! colorscheme solarized
 silent! colorscheme badwolf
 
+" Custom Functions
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
