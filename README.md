@@ -24,11 +24,12 @@ dotfiles fyrir Linux þjóna
 | **`,sv`** | Endurhlaða vimrc eftir breytingar |
 | **`,t`** | Slökkva/kveikja á paste mode |
 | **`ds / cs`** | Eyða eða breyta gæsalöppum með vim-surround |
-| **`gcc`** | setja inn eða taka út comment fyrir viðkomandi línu |
+| **`gcc`** | Setja inn eða taka út comment fyrir viðkomandi línu |
 | **`gc`** | Setja inn eða taka út comment fyrir valinn texta (visual mode) |
 | **`J/K`** | Færa valinn texta upp eða niður í "visual mode" |
 
 ## tmux
+https://tmuxcheatsheet.com/
 
 | Flýtivísun | Lýsing |
 | -------- | ----------- |
