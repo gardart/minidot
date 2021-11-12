@@ -29,7 +29,7 @@ dotfiles fyrir Linux þjóna
 | **`J/K`** | Færa valinn texta upp eða niður í "visual mode" |
 
 ## tmux
-https://tmuxcheatsheet.com/
+https://tmuxcheatsheet.com
 
 | Flýtivísun | Lýsing |
 | -------- | ----------- |
