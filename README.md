@@ -37,8 +37,8 @@ Opna nýtt tmux session og gefa því ásamt glugganum nafn
 | Flýtivísun | Lýsing |
 | -------- | ----------- |
 | **`<Ctrl-hjkl>`** | Fara á milli gluggasvæða með hjkl án þess að þurfa að ýta á b líka, skilur einnig Vim splits |
-| **<Ctrl-b> `d`** | Aftengja tmux session |
-| **<Ctrl-b> `-`** | Skipta glugganum lárétt (einnig hægt með `"`) |
+| **C-b `d`** | Aftengja tmux session |
+| **`<Ctrl-b> -`** | Skipta glugganum lárétt (einnig hægt með `"`) |
 | **<Ctrl-b> `ö`** | Skipta glugganum lóðrétt (einnig hægt með `%`) |
 | **<Ctrl-b> `c`** | Búa til nýjan tmux glugga og fara í sömu möppuna |
 | **<Ctrl-b> `b`** | Breyta gluggasvæðinu í sjálfstæðann glugga |
