@@ -8,36 +8,33 @@ dotfiles fyrir Linux þjóna
 
 ## Vim
 
-| Flýtilyklar | Lýsing |
+| Flýtivísun | Lýsing |
 | -------- | ----------- |
-| **,d** | Opna/Loka NERDTree |
-| **ds** | Toggle Tagbar (it is opened by default in certain source ccode files) |
-| **F4** | Open a vertical split and show the list of existing buffers |
-| **F5** | Open a shell in a tmux split |
-| **Shift-Left/Right** | Change to the previous/next buffer |
-| **\<Ctrl-Space\>** | In INSERT mode opens the autocompletion popup |
-| **\<Ctrl-p\>** | Opens the CtrlP file search window |
-
-* `<Ctrl-hjkl>` move between windows and splits, works with tmux windows as well
-* `,d` brings up / closes down [NERDTree](https://github.com/scrooloose/nerdtree), a sidebar buffer for navigating and manipulating files
-* `ds`/`cs` delete/change surrounding characters (e.g. `"Hey!"` + `ds"` = `Hey!`, `"Hey!"` + `cs"'` = `'Hey!'`) with [vim-surround](https://github.com/tpope/vim-surround)
-* `,"` surround word with "
-* `,'` surround word with '
-* `gcc` toggles current line comment
-* `gc` toggles visual selection comment lines
-* `,<space>`  turn off highlighting until the next search
-* `,l` Toggle between numbers and relative numbers
-* `,1` Toggle number / nonumber
+| **`<Ctrl-hjkl>`** | Fara á milli glugga með hjkl án þess að þurfa að ýta líka á w (einnig hægt færa sig á milli tmux glugga) |
+| **`,o`** | Loka öllum öðrum gluggum |
+| **`,,`** | Opna síðasta "buffer" |
+| **`<Shift-TAB>`** | Flakka á milli "buffera" |
+| **`,d`** | Opna/Loka NERDTree |
+| **`,<space>`** | Slökkva á highlighting (virkjast aftur í næstu leit) |
+| **`,l`** | Velja hvort línur séu í númeraröð eða "relative numbers" |
+| **`,1`** | Slökkva/kveikja á línunúmerum |
+| **`,"`** | Setja gæsalappir eða eitthvað annað utan um valinn text |
+| **`,'[{<`** | Virkar einnig með annarskonar hornklofum |
+| **`,ev`** | Opna vimrc |
+| **`,sv`** | Endurhlaða vimrc eftir breytingar |
+| **`,t`** | Slökkva/kveikja á paste mode |
+| **`ds / cs`** | Eyða eða breyta gæsalöppum með vim-surround |
+| **`gcc`** | setja inn eða taka út comment fyrir viðkomandi línu |
+| **`gc`** | Setja inn eða taka út comment fyrir valinn texta (visual mode) |
+| **`J/K`** | Færa valinn texta upp eða niður í "visual mode" |
 
 ## tmux
 
-* `<Ctrl-b> -` split pane horizontally
-| Flýtilyklar | Lýsing |
+| Flýtivísun | Lýsing |
 | -------- | ----------- |
-| **F2** | Opna NERDTree |
-| **F3** | Toggle Tagbar (it is opened by default in certain source ccode files) |
-| **F4** | Open a vertical split and show the list of existing buffers |
-| **F5** | Open a shell in a tmux split |
-| **Shift-Left/Right** | Change to the previous/next buffer |
-| **\<Ctrl-Space\>** | In INSERT mode opens the autocompletion popup |
-| **\<Ctrl-p\>** | Opens the CtrlP file search window |
+| **`<Ctrl-hjkl>`** | Fara á milli gluggasvæða með hjkl án þess að þurfa að ýta á b líka, skilur einnig Vim splits |
+| **<Ctrl-b> `d`** | Aftengja tmux session |
+| **<Ctrl-b> `-`** | Skipta glugganum lárétt (einnig hægt með `"`) |
+| **<Ctrl-b> `ö`** | Skipta glugganum lóðrétt (einnig hægt með `%`) |
+| **<Ctrl-b> `c`** | Búa til nýjan tmux glugga og fara í sömu möppuna |
+| **<Ctrl-b> `b`** | Breyta gluggasvæðinu í sjálfstæðann glugga |
