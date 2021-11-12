@@ -5,6 +5,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
+Plug 'sjl/badwolf'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -70,6 +72,7 @@ filetype indent on
 filetype plugin on
 set autoindent
 
+" UI Layout
 set number              " show line numbers
 set highlight+=N:DiffText             " make current line number stand out a little
 set showcmd             " show command in bottom bar
@@ -78,6 +81,15 @@ set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
 
+" Automation for numbering modes
+" Automatically switch to absolute line numbers when in insert mode
+" and relative numbers when in normal mode
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+autocmd FocusLost * :set norelativenumber
+autocmd FocusGained * :set relativenumber
+
+" Searching
 set ignorecase          " ignore case when searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
@@ -108,5 +120,6 @@ set background=dark
 " curl -fLo ~/.vim/colors/solarized.vim --create-dirs https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-silent! colorscheme solarized
+" silent! colorscheme solarized
+silent! colorscheme badwolf
 
