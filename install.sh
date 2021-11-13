@@ -21,7 +21,7 @@ function setup_zsh() {
   git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
   mkdir -p $ZSH_CUSTOM/themes
-  curl -O https://gist.githubusercontent.com/schminitz/9931af23bbb59e772eec/raw/schminitz.zsh-theme -o $ZSH_CUSTOM/themes/schminitz.zsh-theme
+  curl -fsSL https://gist.githubusercontent.com/schminitz/9931af23bbb59e772eec/raw/schminitz.zsh-theme -o $ZSH_CUSTOM/themes/schminitz.zsh-theme
   
   sed -i -- 's/^plugins=(/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n/g' ~/.zshrc
   sed -i -- 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gardar"/g' ~/.zshrc
