@@ -33,7 +33,7 @@ https://tmuxcheatsheet.com
 
 Opna nýtt tmux session og gefa því ásamt glugganum nafn
 ```
-tmux new -s afritun -n minecraftserver1
+tmux new -s podman -n containerA
 ```
 
 || Flýtivísun | Lýsing |
