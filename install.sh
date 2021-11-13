@@ -14,9 +14,8 @@ function setup_zsh() {
   echo 'Installing oh-my-zsh...'
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   
-  #ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
-
-  #mkdir -p $ZSH_CUSTOM/plugins
+  ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+  mkdir -p $ZSH_CUSTOM/plugins
   #git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
   #git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
