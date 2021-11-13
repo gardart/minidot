@@ -12,7 +12,8 @@ function setup_bash() {
 
 function setup_zsh() {
   echo 'Installing oh-my-zsh...'
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   
   ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
   mkdir -p $ZSH_CUSTOM/plugins
