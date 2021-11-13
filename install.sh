@@ -111,18 +111,18 @@ set -e
   fi
 
 
-  # if [[ $LOGIN_SHELL == 'bash' ]] ; then
-  #   echo "Operating System setup complete."
-  #   echo "Reloading session"
+  if [[ $LOGIN_SHELL == 'bash' ]] ; then
+    echo "Operating System setup complete."
+    echo "Reloading session"
 
-  #   source ~/.bashrc
-  # elif [[ $LOGIN_SHELL == 'zsh' ]] ; then
-    # echo "Changing shells to ZSH"
-    # chsh -s /bin/zsh
+    source ~/.bashrc
+  elif [[ $LOGIN_SHELL == 'zsh' ]] ; then
+    echo "Changing shells to ZSH"
+    chsh -s /bin/zsh
 
-    # echo "Operating System setup complete."
-    # echo "Reloading session"
-    # exec zsh
-  # fi
+    echo "Operating System setup complete."
+    echo "Reloading session"
+    exec zsh
+  fi
 
 )
