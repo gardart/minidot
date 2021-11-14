@@ -22,9 +22,12 @@ function setup_zsh() {
 
   mkdir -p $ZSH_CUSTOM/themes
   curl -fsSL https://raw.githubusercontent.com/gardart/minidot/main/gardar.zsh-theme  -o $ZSH_CUSTOM/themes/gardar.zsh-theme
-  # curl -fsSL https://gist.githubusercontent.com/schminitz/9931af23bbb59e772eec/raw/schminitz.zsh-theme -o $ZSH_CUSTOM/themes/schminitz.zsh-theme
   
-  sed -i -- 's/^plugins=(/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n/g' ~/.zshrc
+  sed -i -- 's/^plugins=(/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n  vi-mode\n/g' ~/.zshrc
+  #virtualenv
+  #vi-mode
+  #tmux
+  #sudo
   sed -i -- 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gardar"/g' ~/.zshrc
 }
 
