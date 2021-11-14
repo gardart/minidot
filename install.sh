@@ -20,15 +20,14 @@ function setup_zsh() {
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
+  # Change theme
   mkdir -p $ZSH_CUSTOM/themes
   curl -fsSL https://raw.githubusercontent.com/gardart/minidot/main/gardar.zsh-theme  -o $ZSH_CUSTOM/themes/gardar.zsh-theme
+  sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gardar"/g' ~/.zshrc
   
+  # Install plugins
   sed -i -- 's/^plugins=(/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n  vi-mode\n/g' ~/.zshrc
-  #virtualenv
-  #vi-mode
-  #tmux
-  #sudo
-  sed -i -- 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gardar"/g' ~/.zshrc
+  sed -i '/plugins/s/.*/plugins=\(git vi-mode sudo tmux virtualenv\)/g' ~/.zshrc
 }
 
 function determine_shell() {
