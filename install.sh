@@ -26,8 +26,7 @@ function setup_zsh() {
   sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gardar"/g' ~/.zshrc
   
   # Install plugins
-  sed -i -- 's/^plugins=(/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n  vi-mode\n/g' ~/.zshrc
-  sed -i '/plugins/s/.*/plugins=\(git vi-mode sudo tmux virtualenv\)/g' ~/.zshrc
+  sed -i '/plugins=\(/s/.*/plugins=\(git vi-mode sudo tmux virtualenv zsh-autosuggestions zsh-syntax-highlighting\)/g' ~/.zshrc
 }
 
 function determine_shell() {
