@@ -57,6 +57,9 @@ setw -g mode-keys vi
 # ------------#
 
 # Copy-mode
+# Enter copy mode using CTRL-B 'Esc'
+unbind [
+bind Escape copy-mode
 unbind-key -T copy-mode-vi v
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi 'C-v' send-keys -X rectangle-toggle
