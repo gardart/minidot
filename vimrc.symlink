@@ -77,7 +77,7 @@ set autoindent
 set number              " show line numbers
 set highlight+=N:DiffText             " make current line number stand out a little
 set showcmd             " show command in bottom bar
-set nocursorline        " highlight current line
+set cursorline          " highlight current line
 set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
