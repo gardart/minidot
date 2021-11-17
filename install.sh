@@ -15,6 +15,7 @@ function setup_zsh() {
   # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   
+  OHMYZSH_PATH=$HOME/.oh-my-zsh
   ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
   mkdir -p $ZSH_CUSTOM/plugins
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -27,6 +28,9 @@ function setup_zsh() {
   
   # Install plugins
   sed -i '/^plugins=/s/.*/plugins=\(git vi-mode sudo tmux virtualenv zsh-autosuggestions zsh-syntax-highlighting\)/g' ~/.zshrc
+  
+  # Fix permissions
+  chmod g-w,o-w $ZSH_CUSTOM $OHMYZSH_PATH/cache/completions
 }
 
 function determine_shell() {
