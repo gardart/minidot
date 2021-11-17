@@ -31,6 +31,7 @@ function setup_zsh() {
   
   # Fix permissions
   chmod -R g-w,o-w $ZSH_CUSTOM || true
+  mkdir -p $OHMYZSH_PATH/cache/completions || true
   chmod -R g-w,o-w $OHMYZSH_PATH/cache/completions || true
 }
 
