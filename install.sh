@@ -30,7 +30,8 @@ function setup_zsh() {
   sed -i '/^plugins=/s/.*/plugins=\(git vi-mode sudo tmux virtualenv zsh-autosuggestions zsh-syntax-highlighting\)/g' ~/.zshrc
   
   # Fix permissions
-  chmod g-w,o-w $ZSH_CUSTOM $OHMYZSH_PATH/cache/completions
+  chmod -R g-w,o-w $ZSH_CUSTOM
+  chmod -R g-w,o-w $OHMYZSH_PATH/cache/completions
 }
 
 function determine_shell() {
