@@ -1,6 +1,11 @@
 # oh-my-zsh theme
 # Gardar Thorsteinsson
 #
+
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+    }
+
 # local time, color coded by last return code
 time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}"
 time_disabled="%{$fg[green]%}%*%{$reset_color%}"
@@ -8,11 +13,12 @@ time=$time_enabled
 
 local user="%(!.%{$fg_bold[blue]%}.%{$fg_bold[blue]%})%n%{$reset_color%}"
 local host="@$HOST%{$reset_color%}"
+local venv="%{$fg[green]%}$(virtualenv_info)%{$reset_color%}%"
 
 # Compacted $PWD
 local pwd="%{$fg_bold[blue]%}%c%{$reset_color%}"
 
-PROMPT='${time} ${user}${host} ${pwd} $(git_prompt_info)'
+PROMPT='${venv} ${time} ${user}${host} ${pwd} $(git_prompt_info)'
 
 # i would prefer 1 icon that shows the "most drastic" deviation from HEAD,
 # but lets see how this works out
