@@ -13,7 +13,7 @@ time=$time_enabled
 
 local user="%(!.%{$fg_bold[blue]%}.%{$fg_bold[blue]%})%n%{$reset_color%}"
 local host="@$HOST%{$reset_color%}"
-local venv="%{$fg[green]%}$(virtualenv_info)%{$reset_color%}%"
+local venv="%{$fg_bold[cyan]%}$(virtualenv_info)%{$reset_color%}%"
 
 # Compacted $PWD
 local pwd="%{$fg_bold[blue]%}%c%{$reset_color%}"
