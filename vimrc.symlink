@@ -96,9 +96,6 @@ set ignorecase          " ignore case when searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
 
-" Filetype settings
-autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn
-
 " Status line
 set laststatus=2   " Always show the status line - use 2 lines for the status bar
 set statusline=
@@ -126,6 +123,10 @@ set background=dark
 silent! colorscheme onedark
 let g:onedark_termcolors=256
 let g:onedark_termtrans=256
+
+" Filetype settings
+autocmd FileType python setlocal omnifunc=python3complete#Complete
+autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn omnifunc=syntaxcomplete#Complete
 
 " Custom Functions
 function! ToggleNumber()
