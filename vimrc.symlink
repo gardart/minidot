@@ -74,6 +74,10 @@ filetype indent on
 filetype plugin on
 set autoindent
 
+" Undo / Swap
+" set nobackup noswapfile nowritebackup undofile undodir=~/.vim/undo undolevels=99999
+" set scrolloff=999
+
 " UI Layout
 set number              " show line numbers
 set highlight+=N:DiffText             " make current line number stand out a little
