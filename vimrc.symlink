@@ -133,6 +133,7 @@ let g:onedark_termtrans=256
 " Filetype settings
 autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn omnifunc=syntaxcomplete#Complete
+autocmd FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e            " Automatically removing all trailing whitespace
 
 " Custom Functions
 function! ToggleNumber()
