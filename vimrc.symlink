@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " Leader Shortcuts {{{
@@ -113,16 +114,18 @@ set statusline+=\ %l:%c
 
 " Themes
 " set t_Co=256
-colorscheme elflord
 set background=dark
 
 " manually install solarized theme
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim in ~/.vim/colors/
 " curl -fLo ~/.vim/colors/solarized.vim --create-dirs https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
 " silent! colorscheme solarized
-silent! colorscheme badwolf
+" silent! colorscheme badwolf
+silent! colorscheme onedark
+let g:onedark_termcolors=256
+let g:onedark_termtrans=256
 
 " Custom Functions
 function! ToggleNumber()
