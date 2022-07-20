@@ -13,6 +13,16 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'joshdick/onedark.vim'
+" Better Whitespace {{{
+Plug 'ntpeters/vim-better-whitespace'
+autocmd FileType fugitive DisableWhitespace
+let g:better_whitespace_enabled = 1
+let g:better_whitespace_filetypes_blacklist = ['diff']
+let g:strip_max_file_size = 0
+let g:strip_whitelines_at_eof = 1
+let g:strip_whitespace_confirm = 0
+let g:strip_whitespace_on_save = 1
+" }}}
 call plug#end()
 
 " Leader Shortcuts {{{
@@ -144,3 +154,24 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
+
+function removeM()
+%s/^M//
+:endfunction
+ 
+function removeWhiteSpace()
+%s/^ \+ $//       " replaces a line that starts and ends with white spaces
+%s/^ $//          " replaces a single white space that is alone on a line
+%s/ \+$//         " replaces the end of a line that finishes with trailing spaces
+%s/ $//           " replaces the end of a line that finishes with single white space
+:endfunction
+
+function! StripTrailingWhitespace()
+  normal mZ
+  let l:chars = col("$")
+  %s/\s\+$//e
+  if (line("'Z") != line(".")) || (l:chars != col("$"))
+    echo "Trailing whitespace stripped\n"
+  endif
+  normal `Z
+endfunction
