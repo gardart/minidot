@@ -18,6 +18,8 @@ Plug 'ntpeters/vim-better-whitespace'
 autocmd FileType fugitive DisableWhitespace
 let g:better_whitespace_enabled = 1
 let g:better_whitespace_filetypes_blacklist = ['diff']
+let g:better_whitespace_guicolor='LightCyan'
+let g:better_whitespace_ctermcolor='LightCyan'
 let g:strip_max_file_size = 0
 let g:strip_whitelines_at_eof = 1
 let g:strip_whitespace_confirm = 0
