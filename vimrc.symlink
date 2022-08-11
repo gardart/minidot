@@ -157,11 +157,11 @@ function! ToggleNumber()
     endif
 endfunc
 
-function removeM()
+function RemoveM()
 %s/^M//
 :endfunction
  
-function removeWhiteSpace()
+function RemoveWhiteSpace()
 %s/^ \+ $//       " replaces a line that starts and ends with white spaces
 %s/^ $//          " replaces a single white space that is alone on a line
 %s/ \+$//         " replaces the end of a line that finishes with trailing spaces
