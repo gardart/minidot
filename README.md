@@ -39,6 +39,7 @@ Vel texta með visual mode eins og gardar og keyri svo eftirfarandi skipun
 Þá breytist gardar í nafn=gardar
 
 Skipunin brotin niður:
+
 :s = substitute -> :[range]s[ubstitute]/{pattern}/{string}/[flags] [count] 
 
 \(\w.*\) = regex leit af grúppu sem inniheldur orð (ekki whitespace) -> (\w.*)
