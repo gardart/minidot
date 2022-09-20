@@ -28,6 +28,16 @@ dotfiles fyrir Linux þjóna
 | **`gc`** | Setja inn eða taka út comment fyrir valinn texta (visual mode) |
 | **`J/K`** | Færa valinn texta upp eða niður í "visual mode" |
 
+## Search Replace í visual mode
+
+Hægt er að velja texta og nota hann sem input í search/replace
+Dæmi:
+Vel texta með visual mode eins og gardar og keyri svo eftirfarandi skipun
+```
+:s/\(\w.*\)/nafn=\1
+```
+Þá breytist gardar í nafn=gardar
+
 ## tmux
 https://tmuxcheatsheet.com
 
