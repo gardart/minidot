@@ -34,14 +34,19 @@ Hægt er að velja texta og nota hann sem input í search/replace
 Dæmi:
 Vel texta með visual mode eins og gardar og keyri svo eftirfarandi skipun
 ```
-:s/\(\w.*\)/nafn=\1
+:s//nafn=\1
 ```
 Þá breytist gardar í nafn=gardar
+
+Ef gardar inniheldur bil á undan þá þarf að taka út whitespace með regex
+```
+:s/\(\w.*\)/nafn=\1
+```
 
 Skipunin brotin niður:
 ```
 :s = substitute -> :[range]s[ubstitute]/{pattern}/{string}/[flags] [count] 
-\(\w.*\) = regex leit af grúppu sem inniheldur orð (ekki whitespace) -> (\w.*)
+\(\w.*\) = regex leit, sleppa whitespace í upphafi en hafa alla strengi með þar á eftir
 nafn=\1 = \1 er niðurstaðan úr leitinni notuð aftur
 ```
 
