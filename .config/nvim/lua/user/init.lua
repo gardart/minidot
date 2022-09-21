@@ -6,40 +6,21 @@
 -- where a value with no key simply has an implicit numeric key
 local config = {
 
-  -- Configure AstroNvim updates
-  updater = {
-    remote = "origin", -- remote to use
-    channel = "stable", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "main", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
-    show_changelog = true, -- show the changelog after performing an update
-    auto_reload = false, -- automatically reload and sync packer after a successful update
-    auto_quit = false, -- automatically quit the current session after a successful update
-    -- remotes = { -- easily add new remotes to track
-    --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
-    --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
-    --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
-    -- },
-  },
-
   -- Set colorscheme to use
   colorscheme = "default_theme",
 
   -- Override highlight groups in any theme
-  -- highlights = {
-  --   -- duskfox = { -- a table of overrides/changes to the default
-  --   --   Normal = { bg = "#000000" },
-  --   -- },
-  --   default_theme = function(highlights) -- or a function that returns a new table of colors to set
-  --     local C = require "default_theme.colors"
-  --
-  --     highlights.Normal = { fg = C.fg, bg = C.bg }
-  --     return highlights
-  --   end,
-  -- },
+  highlights = {
+    -- duskfox = { -- a table of overrides/changes to the default
+    --   Normal = { bg = "#000000" },
+    -- },
+    default_theme = function(highlights) -- or a function that returns a new table of colors to set
+      local C = require "default_theme.colors"
+
+      highlights.Normal = { fg = C.fg, bg = C.bg }
+      return highlights
+    end,
+  },
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -75,19 +56,19 @@ local config = {
   -- Default theme configuration
   default_theme = {
     -- set the highlight style for diagnostic messages
-    -- diagnostics_style = { italic = true },
+    diagnostics_style = { italic = true },
     -- Modify the color palette for the default theme
-    -- colors = {
-    --   -- fg = "#abb2bf",
-    --   -- bg = "#1e222a",
-    -- },
+    colors = {
+      fg = "#abb2bf",
+      bg = "#1e222a",
+    },
     -- enable or disable highlighting for extra plugins
     plugins = {
       aerial = true,
       beacon = false,
       bufferline = true,
       dashboard = true,
-      highlighturl = false,
+      highlighturl = true,
       hop = false,
       indent_blankline = true,
       lightspeed = false,
@@ -98,7 +79,7 @@ local config = {
       rainbow = true,
       symbols_outline = false,
       telescope = true,
-      vimwiki = true,
+      vimwiki = false,
       ["which-key"] = true,
     },
   },
@@ -192,9 +173,6 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      { "joshdick/onedark.vim" },
-      { "vimwiki/vimwiki" },
-      { "sotte/presenting.vim" },
 
       -- We also support a key value style plugin definition similar to NvChad:
       -- ["ray-x/lsp_signature.nvim"] = {
@@ -203,6 +181,8 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      { "joshdick/onedark.vim" },
+      { "vimwiki/vimwiki" },
       {
         "cljoly/telescope-repo.nvim",
         after = "telescope.nvim",
@@ -307,11 +287,6 @@ local config = {
       command = "source <afile> | PackerSync",
     })
 
-    vim.api.nvim_command "augroup presentation"
-    vim.api.nvim_command "autocmd!"
-    vim.api.nvim_command "au Filetype markdown nnoremap <buffer> <F10> :PresentingStart<CR>"
-    vim.api.nvim_command "au Filetype markdown nnoremap <buffer> <F12> :.!toilet -w 200 -f term -F border<CR>"
-    vim.api.nvim_command "augroup END"
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
