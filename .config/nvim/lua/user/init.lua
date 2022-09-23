@@ -155,6 +155,13 @@ local config = {
       -- setting a mapping to false will disable it
       -- ["<esc>"] = false,
     },
+
+    v = {
+      -- second key is the lefthand side of the map
+      -- mappings seen under group name "Buffer"
+      ["J"] = { ":m '>+1<CR>gv=gv", desc = "Move selection down" },
+      ["K"] = { ":m '<-2<CR>gv=gv", desc = "Move selection up" },
+    },
   },
 
   -- Configure plugins
@@ -183,6 +190,7 @@ local config = {
       -- },
       { "joshdick/onedark.vim" },
       { "vimwiki/vimwiki" },
+      { "tpope/vim-surround" },
       {
         "cljoly/telescope-repo.nvim",
         after = "telescope.nvim",
