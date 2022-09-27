@@ -303,6 +303,7 @@ local config = {
 		unmap("n", "<leader>pu")
 		--
 		map("n", "<leader>p", "_dP", { desc = "greatest remap ever" })
+
 		-- Keep it centered when searching
 		vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("n", "N", "nzzzv", { noremap = true, silent = true })
