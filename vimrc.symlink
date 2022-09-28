@@ -1,4 +1,4 @@
-" Load plugins
+" Load plumapleadergins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -64,11 +64,23 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-o> <C-w>o
+" Prevent x and the delete key from overriding what's in the clipboard.
+noremap x "_x
+noremap X "_x
+noremap <Del> "_x
+" Prevent selecting and pasting from overwriting what you originally copied.
+" xnoremap p pgvy
 " }}}
 " Visual mode mappings {{{
 " move selected block up/down in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+vnoremap < <gv
+vnoremap > >gv
+" greatest remap ever
+" no overwrite paste
+" xnoremap <leader>p "_dP
+xnoremap p "_dP
 " }}}
 
 syntax enable           " enable syntax processing
