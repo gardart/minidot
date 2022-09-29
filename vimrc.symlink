@@ -159,6 +159,15 @@ autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn omnifunc=syntaxcomplete#Complete
 autocmd FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e            " Automatically removing all trailing whitespace
 
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
+
 " Custom Functions
 function! ToggleNumber()
     if(&relativenumber == 1)
