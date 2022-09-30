@@ -198,3 +198,16 @@ function! StripTrailingWhitespace()
   endif
   normal `Z
 endfunction
+
+"
+" Allow for per-machine overrides in ~/.vim/host/hostname and
+" ~/.vim/vimrc.local.
+let s:hostfile = $HOME . '/.vim/host/' . substitute(hostname(), "\\..*", '', '')
+if filereadable(s:hostfile)
+  execute 'source ' . s:hostfile
+endif
+
+let s:vimrc_local = $HOME . '/.vim/.vimrc.local'
+if filereadable(s:vimrc_local)
+  execute 'source ' . s:vimrc_local
+endif
