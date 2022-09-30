@@ -159,15 +159,6 @@ autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType yaml setlocal ai ts=2 sts=2 sw=2 expandtab number cursorcolumn omnifunc=syntaxcomplete#Complete
 autocmd FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e            " Automatically removing all trailing whitespace
 
-" WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
-
 " Custom Functions
 function! ToggleNumber()
     if(&relativenumber == 1)
@@ -199,7 +190,6 @@ function! StripTrailingWhitespace()
   normal `Z
 endfunction
 
-"
 " Allow for per-machine overrides in ~/.vim/host/hostname and
 " ~/.vim/vimrc.local.
 let s:hostfile = $HOME . '/.vim/host/' . substitute(hostname(), "\\..*", '', '')
@@ -211,3 +201,12 @@ let s:vimrc_local = $HOME . '/.vim/.vimrc.local'
 if filereadable(s:vimrc_local)
   execute 'source ' . s:vimrc_local
 endif
+
+" WSL yank support
+" let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+" if executable(s:clip)
+"     augroup WSLYank
+"         autocmd!
+"         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+"     augroup END
+" endif
